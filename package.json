@@ -1,6 +1,6 @@
 {
   "name": "@vip30/vue-phoenix",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "scope": "@vip30",
   "description": "phoenix implementation in vue",
   "main": "dist/index.umd.js",

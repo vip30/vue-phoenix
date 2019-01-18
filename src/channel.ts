@@ -16,7 +16,7 @@ function ChannelFunc<V extends Vue>(options: {
   return (constructor: VueClass<Vue>) => {
     const originalDestoryed = constructor.prototype.destoryed
     const originalCreated = constructor.prototype.created
-    constructor.prototype.created = function () {
+    constructor.prototype.created = function() {
       if (originalCreated) {
         originalCreated.bind(this)()
       }
@@ -31,7 +31,7 @@ function ChannelFunc<V extends Vue>(options: {
         this.$channel.on(phoenixOption.eventName, phoenixOption.callback)
       }
     }
-    constructor.prototype.destoryed = function () {
+    constructor.prototype.destoryed = function() {
       if (originalDestoryed) {
         originalDestoryed.bind(this)()
       }
