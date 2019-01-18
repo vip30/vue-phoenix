@@ -13,30 +13,30 @@ function ChannelFunc<V extends Vue>(options: {
     [key: string]: (resp: any) => void
   }
 }) {
-  return (constructor: V) => {
-    const originalCreated = constructor.$options.destroyed
-    constructor.$options.created = () => {
+  return (constructor: VueClass<Vue>) => {
+    const originalDestoryed = constructor.prototype.destoryed
+    const originalCreated = constructor.prototype.created
+    constructor.prototype.created = () => {
       if (originalCreated) {
         originalCreated.bind(this)()
       }
-      constructor.$channel = constructor.$socket.channel(options.name, options.params)
-      const joinObj = constructor.$channel.join()
+      this.$channel = this.$socket.channel(options.name, options.params)
+      const joinObj = this.$channel.join()
       if (options.hooks) {
         for (const hook of Object.keys(options.hooks)) {
           joinObj.receive(hook, options.hooks[hook])
         }
       }
-      for (const phoenixOption of constructor.phoenixOptions) {
-        constructor.$channel.on(phoenixOption.eventName, phoenixOption.callback)
+      for (const phoenixOption of this.phoenixOptions) {
+        this.$channel.on(phoenixOption.eventName, phoenixOption.callback)
       }
     }
-    const originalDestoryed = constructor.$options.destroyed
-    constructor.$options.destroyed = () => {
+    constructor.prototype.destoryed = () => {
       if (originalDestoryed) {
         originalDestoryed.bind(this)()
       }
-      for (const phoenixOption of constructor.phoenixOptions) {
-        constructor.$channel.off(phoenixOption.eventName)
+      for (const phoenixOption of this.phoenixOptions) {
+        this.$channel.off(phoenixOption.eventName)
       }
     }
     return constructor
