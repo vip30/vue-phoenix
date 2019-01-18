@@ -12,5 +12,6 @@ export default class VuePhoenix implements PluginObject<string> {
   public install(localVue: VueConstructor<Vue>) {
     Vue.prototype.$socket = this.socket
     Vue.prototype.$vuePhoenix = this
+    this.socket.connect()
   }
 }
