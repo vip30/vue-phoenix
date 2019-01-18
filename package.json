@@ -31,7 +31,6 @@
   "devDependencies": {
     "@types/jest": "^16.0.8",
     "@types/node": "^8.0.47",
-    "@types/phoenix": "0.0.4",
     "@vue/test-utils": "^1.0.0-beta.10",
     "codecov": "^3.0.2",
     "jest": "^22.4.3",
@@ -54,6 +53,7 @@
     "pre-commit"
   ],
   "dependencies": {
+    "@types/phoenix": "0.0.4",
     "phoenix": "^1.4.0",
     "vue-class-component": "^6.3.2"
   },

@@ -1,0 +1,6 @@
+{
+  "git.ignoreLimitWarning": true,
+  "editor.formatOnSave": true,
+  "tslint.autoFixOnSave": true,
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

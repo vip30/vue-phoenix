@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "../dist",
+    "moduleResolution": "node",
+    "target": "es5",
+    "module": "es2015",
+    "lib": ["dom", "es2015"],
+    "strictPropertyInitialization": false,
+    "sourceMap": true,
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "typeRoots": ["../node_modules/@types", "../types/*.ts"],
+    "baseUrl": ".",
+    "noImplicitThis": false,
+    "noUnusedLocals": true
+  },
+  "include": ["./*.ts", "../types/*"],
+  "exclude": ["../node_modules"]
+}
