@@ -13,5 +13,5 @@ deploy:
   api_key: '$NPM_TOKEN'
   on:
     tags: true
-    repo: @vip30/vue-phoenix
+    repo: vip30/vue-phoenix
     node: '7.0'
