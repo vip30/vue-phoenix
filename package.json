@@ -2,7 +2,7 @@
   "name": "@vip30/vue-phoenix",
   "version": "0.0.11",
   "scope": "@vip30",
-  "description": "phoenix implementation in vue",
+  "description": "Vue-Phoenix is a Phoenix integration for Vuejs.",
   "main": "dist/index.umd.js",
   "module": "dist/index.js",
   "keywords": [
