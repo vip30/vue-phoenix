@@ -7,7 +7,8 @@ echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   echo "Releasing $VERSION ..."
-
+  npm run build
+  
   # commit
   git add -A
   git commit -m "[build] $VERSION"
