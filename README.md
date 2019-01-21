@@ -39,7 +39,7 @@ import { Obey } from '@vip30/vue-phoenix'
 
 @Obey('shout', 'room:lobby')
 public shout(payload: any) {
-    console.log(any)
+    console.log(payload)
 }
 ```
 
