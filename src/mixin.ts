@@ -1,17 +1,27 @@
 import Vue from 'vue'
-import { ObeyOption } from '../types/vue'
 
-export default class VuePhoenixMixin extends Vue {
-  public created() {
+export default Vue.extend({
+  methods: {
+    $initChannel(channelName: string, params?: object) {
+      if (this.$waitingEventList) {
+        this.$channel = this.$channelHelper.initInstance(channelName, params)
+        this.$channel.join()
+        for (const key of Object.keys(this.$waitingEventList)) {
+          this.$channel.on(key, this.$waitingEventList[key])
+        }
+      }
+    }
+  },
+  created() {
     // Phoenix is not exist in the options
     if (!this.$options.phoenix) {
       return
     }
-    const waitingEventList: ObeyOption = {}
+    this.$waitingEventList = {}
     for (const key of Object.keys(this.$options.phoenix)) {
       const phoenixOption = this.$options.phoenix[key]
       if (phoenixOption instanceof Function) {
-        this.$channel ? this.$channel.on(key, phoenixOption) : (waitingEventList[key] = phoenixOption)
+        this.$channel ? this.$channel.on(key, phoenixOption) : (this.$waitingEventList[key] = phoenixOption)
       } else {
         const channel = this.$channelHelper.initInstance(key)
         channel.join()
@@ -20,16 +30,8 @@ export default class VuePhoenixMixin extends Vue {
         }
       }
     }
-    if (Object.keys(waitingEventList)) {
-      this.$watch('$channel', (newVal: any, oldVal: any) => {
-        for (const key of Object.keys(waitingEventList)) {
-          this.$channel.on(key, waitingEventList[key])
-        }
-      })
-    }
-  }
-
-  public destroyed() {
+  },
+  destroyed() {
     // Phoenix is not exist in the options
     if (!this.$options.phoenix) {
       return
@@ -48,4 +50,4 @@ export default class VuePhoenixMixin extends Vue {
       }
     }
   }
-}
+})

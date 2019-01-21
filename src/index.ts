@@ -1,5 +1,5 @@
 import { Socket } from 'phoenix'
-import Vue, { PluginObject } from 'vue'
+import Vue, { PluginObject, VueConstructor } from 'vue'
 import ChannelHelper from './channelHelper'
 import VuePhoenixMixin from './mixin'
 
@@ -15,12 +15,11 @@ export default class VuePhoenix implements PluginObject<string> {
             params
           })
   }
-  public install(localVue: any) {
-    Vue.prototype.$channel = undefined
+  public install(localVue: VueConstructor<Vue>) {
     Vue.prototype.$socket = this.socket
     Vue.prototype.$channelHelper = new ChannelHelper(this.socket)
     Vue.prototype.$vuePhoenix = this
-    localVue.mixin(new VuePhoenixMixin())
+    localVue.mixin(VuePhoenixMixin)
     this.socket.connect()
   }
 }

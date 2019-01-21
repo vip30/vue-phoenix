@@ -13,10 +13,9 @@
     "typeRoots": ["../node_modules/@types"],
     "baseUrl": ".",
     "noImplicitThis": false,
-    "noUnusedLocals": true
-  },
-  "files": [
-    "vue-local-storage-decorator.spec.ts"
-  ],
-  "exclude": ["node_modules", "dist"]
+    "noUnusedLocals": true,
+    "paths": {
+      "@/*": ["../src/*"]
+    }
+  }
 }

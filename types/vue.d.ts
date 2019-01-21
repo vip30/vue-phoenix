@@ -7,6 +7,7 @@
       $channelHelper: ChannelHelper
       $channel: Channel
       $socket: Socket
+      $initChannel: (channelName: string, params?: object) => void
     }
   }
   declare module "vue/types/options" {
@@ -17,7 +18,7 @@
     Computed=DefaultComputed,
     PropsDef=PropsDefinition<DefaultProps>,
     Props=DefaultProps> {
-      phoenix: { 
+      phoenix?: { 
         [channelName: string] : ObeyOption
       } | ObeyOption
     }
