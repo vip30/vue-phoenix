@@ -67,7 +67,7 @@ import { Obey } from '@vip30/vue-phoenix'
 // Without the room name, it will use the component channel
 @Obey('shout')
 public shout(payload: any) {
-  console.log(any)
+  console.log(payload)
 }
 
 public mounted() {
