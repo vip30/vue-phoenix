@@ -7,6 +7,9 @@
       $channelHelper: ChannelHelper
       $channel: Channel
       $socket: Socket
+      /**
+       * Init the channel and listen the event listed on options[phoenix]
+       */
       $initChannel: (channelName: string, params?: object) => void
     }
   }
