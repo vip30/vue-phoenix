@@ -18,7 +18,7 @@ export default class VuePhoenix implements PluginObject<string> {
   public install(localVue: any) {
     Vue.prototype.$channel = undefined
     Vue.prototype.$socket = this.socket
-    Vue.prototype.$channelHelper = new ChannelHelper()
+    Vue.prototype.$channelHelper = new ChannelHelper(this.socket)
     Vue.prototype.$vuePhoenix = this
     localVue.mixin(new VuePhoenixMixin())
     this.socket.connect()
