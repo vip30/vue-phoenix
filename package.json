@@ -19,7 +19,7 @@
     "build": "tsc -p src/tsconfig.json && rollup -c",
     "format": "prettier --write '**/*.ts' ",
     "release": "sh release.sh",
-    "test": "jest --no-cache --watchAll"
+    "test": " "
   },
   "files": [
     "dist",
