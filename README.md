@@ -2,6 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@vip30/vue-phoenix.svg)](https://www.npmjs.com/package/@vip30/vue-phoenix)
 [![Build Status](https://travis-ci.com/vip30/vue-phoenix.svg?branch=master)](https://travis-ci.com/vip30/vue-phoenix)
+[![Coverage](https://codecov.io/gh/vip30/vue-phoenix/branch/master/graph/badge.svg)](https://codecov.io/gh/vip30/vue-phoenix)
 [![CodeFactor](https://www.codefactor.io/repository/github/vip30/vue-phoenix/badge/master)](https://www.codefactor.io/repository/github/vip30/vue-phoenix/overview/master)
 [![Known Vulnerabilities](https://snyk.io/test/github/vip30/vue-phoenix/badge.svg)](https://snyk.io/test/github/vip30/vue-phoenix)
 

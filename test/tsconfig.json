@@ -7,15 +7,15 @@
     "strictPropertyInitialization": false,
     "sourceMap": true,
     "strict": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "typeRoots": ["../node_modules/@types"],
+    "typeRoots": ["../node_modules/@types", "../types/*.ts"],
     "baseUrl": ".",
     "noImplicitThis": false,
-    "noUnusedLocals": true,
-    "paths": {
-      "@/*": ["../src/*"]
-    }
-  }
+    "noUnusedLocals": true
+  },
+  "include": ["./*.ts", "../types/*"],
+  "exclude": ["../node_modules"]
 }

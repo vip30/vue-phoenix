@@ -1,6 +1,6 @@
 module.exports = {
   transform: {
-    '^.+\\.(ts|tsx)?$': 'ts-jest'
+    '^.+\\.tsx?$': 'ts-jest',
   },
   testRegex: 'test/.*.spec\\.(ts|tsx|js)$',
   moduleFileExtensions: ['ts', 'js'],
@@ -13,15 +13,15 @@ module.exports = {
       branches: 0,
       functions: 0,
       lines: 0,
-      statements: 0
-    }
+      statements: 0,
+    },
   },
   globals: {
     "ts-jest": {
-      "tsConfigFile": "./test/tsconfig.json"
-    }
+      "tsConfig": "./test/tsconfig.json",
+    },
   },
   coverageReporters: ['json', 'lcov', 'text'],
   bail: true,
-  verbose: true
+  verbose: true,
 }
