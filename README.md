@@ -6,7 +6,7 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/vip30/vue-phoenix/badge/master)](https://www.codefactor.io/repository/github/vip30/vue-phoenix/overview/master)
 [![Known Vulnerabilities](https://snyk.io/test/github/vip30/vue-phoenix/badge.svg)](https://snyk.io/test/github/vip30/vue-phoenix)
 
-Vue-Phoenix is a [Phoenix](https://github.com/phoenixframework/phoenix) integration for Vuejs. It can support either [vue-class-component](https://github.com/vuejs/vue-class-component) or JS Signle file component.
+Vue-Phoenix is a [Phoenix](https://github.com/phoenixframework/phoenix) integration for Vuejs. It can support either [vue-class-component](https://github.com/vuejs/vue-class-component) or JS single file component.
 
 ## Description
 
