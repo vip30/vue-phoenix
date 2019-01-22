@@ -89,3 +89,14 @@ new Vue({
   }
 })
 ```
+
+Also you can use this.$channelHelper.initInstance to create your own [channel](https://hexdocs.pm/phoenix/js/)
+
+## Example:
+
+```typescript
+public mounted() {
+  const channel = this.$channelHelper.initInstance('room:xxx')
+  channel.join()
+}
+```
