@@ -51,7 +51,7 @@ describe('<obey.ts>', () => {
   test('shout and ping will be consolidated by channel name', () => {
     const t = new ObeyTest()
     t.shallow()
-    expect(t.wrapper.vm.$options.phoenix['room:lobby'].shout).toBeInstanceOf(Function)
-    expect(t.wrapper.vm.$options.phoenix['room:lobby'].ping).toBeInstanceOf(Function)
+    expect(t.wrapper.vm.$options.phoenix['room:lobby'].shout).toBe('RoomShout')
+    expect(t.wrapper.vm.$options.phoenix['room:lobby'].ping).toBe('RoomPing')
   })
 })

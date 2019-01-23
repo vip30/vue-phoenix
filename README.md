@@ -90,7 +90,7 @@ new Vue({
 })
 ```
 
-Also you can use this.$channelHelper.initInstance to create your own [channel](https://hexdocs.pm/phoenix/js/)
+Also you can use this.\$channelHelper.initInstance to create your own [channel](https://hexdocs.pm/phoenix/js/)
 
 ## Example:
 
@@ -100,3 +100,5 @@ public mounted() {
   channel.join()
 }
 ```
+
+You can view example at [here](https://github.com/vip30/vue-phoenix/tree/master/example)
