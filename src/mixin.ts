@@ -7,7 +7,8 @@ export default Vue.extend({
         this.$channel = this.$channelHelper.initInstance(channelName, params)
         this.$channel.join()
         for (const key of Object.keys(this.$waitingEventList)) {
-          this.$channel.on(key, this.$waitingEventList[key])
+          const methodName = this.$waitingEventList[key]
+          this.$channel.on(key, this[methodName])
         }
       }
     }
@@ -20,13 +21,14 @@ export default Vue.extend({
     this.$waitingEventList = {}
     for (const key of Object.keys(this.$options.phoenix)) {
       const phoenixOption = this.$options.phoenix[key]
-      if (phoenixOption instanceof Function) {
-        this.$channel ? this.$channel.on(key, phoenixOption) : (this.$waitingEventList[key] = phoenixOption)
+      if (typeof phoenixOption === 'string') {
+        this.$channel ? this.$channel.on(key, this[phoenixOption]) : (this.$waitingEventList[key] = phoenixOption)
       } else {
         const channel = this.$channelHelper.initInstance(key)
         channel.join()
         for (const eventName of Object.keys(this.$options.phoenix[key])) {
-          channel.on(eventName, phoenixOption[eventName])
+          const methodName = this.$options.phoenix[key][eventName]
+          channel.on(eventName, this[methodName])
         }
       }
     }

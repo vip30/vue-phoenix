@@ -1,0 +1,18 @@
+version: '2'
+services:
+  event:
+    build: .
+    environment:
+      - HOST=0.0.0.0
+    volumes:
+      - ./:/app:cached
+      - build:/app/_build/
+      - deps:/app/deps/
+    command: >
+      sh -c "mix deps.get && mix phx.server"
+    ports:
+      - '4000:4000'
+
+volumes:
+  build:
+  deps:

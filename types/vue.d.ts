@@ -27,7 +27,7 @@
     }
   }
   interface ObeyOption {
-    [eventName: string]: (response: any) => any
+    [eventName: string]: string
   }
 
 

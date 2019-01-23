@@ -9,14 +9,14 @@ export function Obey(eventName: string, channelName?: string) {
         if (channelName) {
           componentOptions.phoenix[channelName] = componentOptions.phoenix[channelName]
             ? {
-                ...componentOptions.phoenix[channelName],
-                [eventName]: descriptor.value
+                ...(componentOptions.phoenix[channelName] as any),
+                [eventName]: key
               }
             : {
-                [eventName]: descriptor.value
+                [eventName]: key
               }
         } else {
-          componentOptions.phoenix[eventName] = descriptor.value
+          componentOptions.phoenix[eventName] = key
         }
       }
     })(target, key)
