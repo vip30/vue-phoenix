@@ -3,7 +3,7 @@ import Vue from 'vue'
 import App from './App.vue'
 
 Vue.use(
-  new VuePhoenix('ws://0.0.0.0:4000/socket', {
+  new VuePhoenix('wss://vue-phoenix.herokuapp.com/socket', {
     token: ''
   })
 )
