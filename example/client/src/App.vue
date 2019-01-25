@@ -14,7 +14,7 @@
           </v-list>
         </div>
         <v-divider></v-divider>
-        <v-layout class="send-box" ma-3 row wrap>
+        <v-layout class="send-box" mx-3 row wrap>
           <v-flex xs12 sm6>
             <v-text-field v-model="sender" label="Your Name" maxlength="20"></v-text-field>
           </v-flex>
