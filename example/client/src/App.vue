@@ -52,7 +52,9 @@ export default class App extends Vue {
   @Obey('shout')
   public onShout(payload: object) {
     this.historyList.push(payload)
-    this.$refs.list.$el.scrollTop = this.$refs.list.$el.scrollHeight
+    this.$nextTick(() => {
+      this.$refs.list.$el.scrollTop = this.$refs.list.$el.scrollHeight
+    })
   }
 
   public created() {
