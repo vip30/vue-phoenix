@@ -1,6 +1,6 @@
 {
   "name": "@vip30/vue-phoenix",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "scope": "@vip30",
   "description": "Vue-Phoenix is a Phoenix integration for Vuejs.",
   "main": "dist/index.umd.js",
