@@ -1,10 +1,10 @@
 
   import { Socket, Channel } from 'phoenix';
-  import ChannelHelper from './channelHelper'
+  import ChannelKeeper from './channelKeeper'
   import Vue, { PluginFunction, WatchOptions } from 'vue'
   declare module "vue/types/vue" {
     interface Vue {
-      $channelHelper: ChannelHelper
+      $channelKeeper: ChannelKeeper
       $channel: Channel
       $socket: Socket
       /**
